@@ -452,7 +452,7 @@ class TestDjangoObjectType:
         )
 
     def test_django_objecttype_convert_choices_enum_naming_collisions(self, PetModel):
-        graphene_settings.CHOICES_TO_ENUM_UNIQUE_TYPE_NAME = True
+        graphene_settings.CHOICES_TO_ENUM_V3_NAMING = True
 
         class PetModelKind(DjangoObjectType):
             class Meta:
@@ -485,7 +485,7 @@ class TestDjangoObjectType:
         }
         """
         )
-        graphene_settings.CHOICES_TO_ENUM_UNIQUE_TYPE_NAME = False
+        graphene_settings.CHOICES_TO_ENUM_V3_NAMING = False
 
     def test_django_objecttype_choices_override_enum(self, PetModel):
         def convert_choice(model, field_name, **kwargs):
