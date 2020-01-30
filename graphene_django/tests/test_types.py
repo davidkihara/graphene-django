@@ -470,18 +470,18 @@ class TestDjangoObjectType:
           query: Query
         }
 
-        enum DjangoModelTestsPetModelKindChoices {
-          CAT
-          DOG
-        }
-
         type PetModelKind {
           id: ID!
-          kind: DjangoModelTestsPetModelKindChoices!
+          kind: TestsPetModelKindChoices!
         }
 
         type Query {
           pet: PetModelKind
+        }
+
+        enum TestsPetModelKindChoices {
+          CAT
+          DOG
         }
         """
         )
